@@ -1,28 +1,30 @@
 use libc::{c_char, c_int, c_void, size_t};
+use std::ptr::{null, null_mut};
 
 #[no_mangle]
 pub extern "C" fn magic_open(_flags: c_int) -> *mut c_void {
-    todo!();
+    null_mut()
 }
 
 #[no_mangle]
 pub extern "C" fn magic_close(_cookie: *mut c_void) {
-    todo!();
+    // NOP
 }
 
 #[no_mangle]
 pub extern "C" fn magic_getpath(_magicfile: *const c_char, _action: c_int) -> *const c_char {
-    todo!();
+    // actual fallback is something like "/usr/magic/magic.mgc"
+    null()
 }
 
 #[no_mangle]
 pub extern "C" fn magic_file(_cookie: *mut c_void, _filename: *const c_char) -> *const c_char {
-    todo!();
+    null()
 }
 
 #[no_mangle]
 pub extern "C" fn magic_descriptor(_cookie: *mut c_void, _fd: c_int) -> *const c_char {
-    todo!();
+    null()
 }
 
 #[no_mangle]
@@ -31,32 +33,32 @@ pub extern "C" fn magic_buffer(
     _buffer: *const c_void,
     _length: size_t,
 ) -> *const c_char {
-    todo!();
+    null()
 }
 
 #[no_mangle]
 pub extern "C" fn magic_error(_cookie: *mut c_void) -> *const c_char {
-    todo!();
+    null()
 }
 
 #[no_mangle]
 pub extern "C" fn magic_getflags(_cookie: *mut c_void) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_setflags(_cookie: *mut c_void, _flags: c_int) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_version() -> c_int {
-    todo!();
+    541
 }
 
 #[no_mangle]
 pub extern "C" fn magic_load(_cookie: *mut c_void, _filename: *const c_char) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
@@ -66,27 +68,27 @@ pub extern "C" fn magic_load_buffers(
     _sizes: *mut size_t,
     _nbuffers: size_t,
 ) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_compile(_cookie: *mut c_void, _filename: *const c_char) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_check(_cookie: *mut c_void, _filename: *const c_char) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_list(_cookie: *mut c_void, _filename: *const c_char) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
 pub extern "C" fn magic_errno(_cookie: *mut c_void) -> c_int {
-    todo!();
+    0
 }
 
 #[no_mangle]
@@ -95,7 +97,7 @@ pub extern "C" fn magic_setparam(
     _param: c_int,
     _value: *const c_void,
 ) -> c_int {
-    todo!();
+    -1
 }
 
 #[no_mangle]
@@ -104,7 +106,7 @@ pub extern "C" fn magic_getparam(
     _param: c_int,
     _value: *mut c_void,
 ) -> c_int {
-    todo!();
+    -1
 }
 
 #[cfg(test)]
