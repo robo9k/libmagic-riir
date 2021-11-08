@@ -1,0 +1,25 @@
+[package]
+name = "c-abi"
+version = "0.1.0-alpha.1"
+authors = [
+    "robo9k <robo9k@symlink.io>",
+]
+edition = "2021"
+rust-version = "1.56.1"
+repository = "https://github.com/robo9k/libmagic-riir.git"
+exclude = [
+	".gitignore",
+	"rust-toolchain.toml",
+	"clippy.toml",
+]
+[package.metadata]
+msrv = "1.56.1"
+
+[lib]
+crate-type = ["dylib", "staticlib"]
+name = "magic"
+
+[dependencies]
+
+[badges]
+maintenance = { status = "experimental" }
