@@ -16,10 +16,11 @@ exclude = [
 msrv = "1.56.1"
 
 [lib]
-crate-type = ["dylib", "staticlib"]
+crate-type = ["cdylib", "staticlib"]
 name = "magic"
 
 [dependencies]
+libc = "0.2.107"
 
 [badges]
 maintenance = { status = "experimental" }
